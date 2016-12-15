@@ -5,9 +5,7 @@ node_js:
   - "6.9.2"
   - "iojs"
   - "node"
-install:
-  - npm install -g codecov
-  - npm install -g istanbul
-  - npm install
+after_script:
+  - "npm run test-cov"
 notifications:
   email: false
