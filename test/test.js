@@ -2,7 +2,7 @@ var request = require('supertest');
 describe('loading express', function () {
   var server;
   beforeEach(function () {
-    server = require('../index.js');
+    server = require('../server');
   });
   afterEach(function () {
     server.close();
