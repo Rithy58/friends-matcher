@@ -1,0 +1,30 @@
+{
+  "name": "friends-matcher",
+  "version": "0.0.1",
+  "description": "match your friends together",
+  "engines": {
+    "node": "6.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rithy58/friends-matcher.git"
+  },
+  "author": "SeihakRithy Muth",
+  "bugs": {
+    "url": "https://github.com/Rithy58/friends-matcher/issues"
+  },
+  "homepage": "https://github.com/Rithy58/friends-matcher#readme",
+  "dependencies": {
+    "express": "4.14.0"
+  },
+  "devDependencies": {
+    "mocha": "3.2.0",
+    "supertest": "2.0.1"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
