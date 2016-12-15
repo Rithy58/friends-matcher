@@ -9,8 +9,5 @@ node_js:
 install:
   - npm install -g codecov
   - npm install -g istanbul
-script:
-  - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec
-  - codecov
 notifications:
   email: false
