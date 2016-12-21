@@ -8,6 +8,12 @@ describe('testing server', function () {
     server.close();
   });
 
+  it('responds to static files', function testSlash(done) {
+    request(server)
+      .get('/')
+      .expect(200, done);
+  });
+
   it('404 not found request', function testPath(done) {
     request(server)
       .get('/foo/bar')
