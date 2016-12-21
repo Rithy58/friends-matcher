@@ -1,5 +1,5 @@
 var request = require('supertest');
-describe('testing server', function () {
+describe('testing router', function () {
   var server;
   beforeEach(function () {
     server = require('../server');
@@ -8,9 +8,9 @@ describe('testing server', function () {
     server.close();
   });
 
-  it('404 not found request', function testPath(done) {
+  it('responds to /', function testSlash(done) {
     request(server)
-      .get('/foo/bar')
-      .expect(404, done);
+      .get('/')
+      .expect(200, done);
   });
 });
