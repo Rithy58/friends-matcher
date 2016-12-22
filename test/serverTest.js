@@ -10,7 +10,7 @@ describe('testing server', function () {
 
   it('responds to static files', function testSlash(done) {
     request(server)
-      .get('/')
+      .get('/index.html')
       .expect(200, done);
   });
 

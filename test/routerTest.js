@@ -8,9 +8,9 @@ describe('testing router', function () {
     server.close();
   });
 
-  it('responds to /hello', function testSlash(done) {
+  it('responds to /auth', function testSlash(done) {
     request(server)
-      .get('/hello')
+      .get('/auth')
       .expect(200, done);
   });
 });
