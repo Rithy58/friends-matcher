@@ -3,8 +3,11 @@ node_js:
   - "5"
   - "6"
   - "6.9.2"
-  - "iojs"
   - "node"
+install:
+  - npm install
+script:
+  - npm test
 after_script:
   - "npm run test-cov"
 notifications:
