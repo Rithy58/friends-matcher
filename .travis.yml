@@ -5,6 +5,9 @@ node_js:
   - "6.9.2"
   - "iojs"
   - "node"
+install:
+  - npm install
+  - bower install
 after_script:
   - "npm run test-cov"
 notifications:
