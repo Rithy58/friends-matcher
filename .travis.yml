@@ -7,7 +7,6 @@ node_js:
   - "node"
 install:
   - npm install
-  - bower install
 after_script:
   - "npm run test-cov"
 notifications:
