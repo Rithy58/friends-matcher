@@ -6,8 +6,6 @@ node_js:
   - "node"
 install:
   - npm install
-before_script:
-  - bower install
 script:
   - npm test
 after_script:
