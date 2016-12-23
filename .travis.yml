@@ -6,6 +6,8 @@ node_js:
   - "node"
 install:
   - npm install
+script:
+  - npm test
 after_script:
   - "npm run test-cov"
 notifications:
