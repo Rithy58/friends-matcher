@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha ./test/ --recursive",
-    "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
+    "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
