@@ -1,6 +1,6 @@
 var express = require('express');
 var authRouter = express.Router();
-var auth = require(__dirname + '/modules/auth');
+var auth = require('../modules/auth.js');
 
 authRouter.get('/', function(req, res) {
   res.status(200).send('Login Page');

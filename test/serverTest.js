@@ -4,7 +4,7 @@ var request = require('supertest');
 describe('testing server', function () {
   var server;
   beforeEach(function () {
-    server = require('../server');
+    server = require('../server.js');
   });
   afterEach(function () {
     server.close();
