@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-app.use(require('express-session')(
-  { secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+var session = require('express-session')(
+  { secret: 'keyboard cat', resave: true, saveUninitialized: true });
 var auth = require(__dirname + '/modules/auth');
 
 app.set('port', (process.env.PORT || 5000));

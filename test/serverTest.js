@@ -1,3 +1,5 @@
+require('./common.js')
+
 var request = require('supertest');
 describe('testing server', function () {
   var server;
