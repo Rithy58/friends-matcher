@@ -1,0 +1,21 @@
+{
+  "name": "friends-matcher",
+  "description": "match your friends together",
+  "main": "public/index.html",
+  "authors": [
+    "SeihakRithy Muth"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/Rithy58/friends-matcher",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0"
+  }
+}
