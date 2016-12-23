@@ -1,8 +1,19 @@
 var express = require('express');
-var router = express.Router();
+var authRouter = express.Router();
+var auth = require(__dirname + '/modules/auth');
 
-router.get('/', function(req, res) {
+authRouter.get('/', function(req, res) {
   res.status(200).send('Login Page');
 });
 
-module.exports = router;
+authRouter.get('/login', auth.authenticate('facebook'));
+
+authRouter.get('/callback', auth.authenticate('facebook', { failureRedirect: '/'}), function(req, res) {
+  res.redirect('/');
+});
+
+authRouter.get('/profile', function(req, res) {
+  res.status(200).send(req.user);
+});
+
+module.exports = authRouter;
