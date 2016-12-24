@@ -3,12 +3,16 @@ var app = angular.module('app', ['ngMaterial', 'ngRoute']);
 app.config(function($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'views/home.html'
+    templateUrl: 'app/views/home.html'
   })
   .when('/login', {
-    templateUrl: 'views/login.html'
+    templateUrl: 'app/views/login.html'
   })
   .otherwise({
-
-  })
+    redirectTo: '/'
+  });
 });
+
+app.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.hashPrefix('');
+}]);
