@@ -1,5 +1,6 @@
 {
   "name": "friends-matcher",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
   "scripts": {
   },
   "env": {
