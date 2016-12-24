@@ -6,9 +6,22 @@ node_js:
   - "node"
 install:
   - npm install
+before_script:
+  - sleep 15
+  - mongo mydb_test --eval 'db.addUser("travis", "test");'
 script:
   - npm test
 after_script:
   - "npm run test-cov"
 notifications:
   email: false
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+services:
+  - mongodb
