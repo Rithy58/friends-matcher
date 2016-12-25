@@ -2,6 +2,7 @@ var express = require('express');
 var authRouter = express.Router();
 var auth = require('../modules/auth.js');
 var user = require('../modules/db.js');
+var bodyParser = require('body-parser');
 
 authRouter.get('/', function(req, res) {
   res.status(200).send('Login Page');
@@ -13,8 +14,8 @@ authRouter.get('/callback', auth.authenticate('facebook', { failureRedirect: '/'
   res.redirect('/');
 });
 
-authRouter.get('/profile', function(req, res) {
-  user.createUser();
+authRouter.get('/profile', bodyParser, function(req, res) {
+  //user.createUser();
   res.status(200).send(req.user);
 });
 
