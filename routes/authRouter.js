@@ -14,9 +14,9 @@ authRouter.get('/callback', auth.authenticate('facebook', { failureRedirect: '/'
   res.redirect('/');
 });
 
-authRouter.get('/profile', bodyParser, function(req, res) {
+authRouter.get('/profile', bodyParser.json(), function(req, res) {
   //user.createUser();
-  res.status(200).send(req.user);
+  res.status(200).send(req.body);
 });
 
 module.exports = authRouter;
