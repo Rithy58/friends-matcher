@@ -1,13 +1,20 @@
 var mongodb = require("mongodb");
-var db;
+var _database;
+var db = {};
 
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database) {
-  if(err) {
-    console.log(err);
-    process.exit(1);
-  }
+db.init = function() {
+  mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database) {
+    if(err) {
+      console.log(err);
+      process.exit(1);
+    }
+    console.log('Database connected')
+    _database = database;
+  });
+};
 
-  db = database;
-});
+db.getDatabase = function() {
+  return _database;
+};
 
 module.exports = db;

@@ -1,4 +1,5 @@
-require('./common.js')
+// TODO: Redo Tests
+require('./env.js')
 
 var request = require('supertest');
 describe('testing router', function () {
