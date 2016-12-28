@@ -7,8 +7,8 @@ node_js:
 install:
   - npm install
 before_script:
-  - sleep 15
-  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+  - sleep 5
+  - mongo friends-matcher --eval 'db.addUser("matchbox", "lighter");'
 script:
   - npm test
 after_script:
