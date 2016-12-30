@@ -18,8 +18,13 @@ authRouter.get('/callback', auth.authenticate('facebook', { failureRedirect: '/'
 
 // TODO: Check for existing profile?
 authRouter.get('/profile', function(req, res) {
-  user.createUser(req.user.id, req.user.displayName);
-  res.status(200).send(req.user);
+  if(req.user) {
+    user.createUser(req.user.id, req.user.displayName);
+    res.status(200).send(req.user);
+  } else {
+    res.status(404).send();
+  }
+
 });
 // END
 

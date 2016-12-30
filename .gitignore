@@ -40,3 +40,4 @@ bower_components
 *.env
 *.dev
 .DS_Store
+.vs

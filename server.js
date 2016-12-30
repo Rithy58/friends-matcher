@@ -13,7 +13,6 @@ var mongoDBStore = new MongoDBStore({
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static('./public/'));
 
-// REVIEW: resave and saveUninitialized
 app.use(session({
   secret: process.env.SESSION_SECRET,
   cookie: {
@@ -21,9 +20,8 @@ app.use(session({
   },
   store: mongoDBStore,
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: false
 }));
-// END
 
 app.use(auth.initialize());
 app.use(auth.session());
