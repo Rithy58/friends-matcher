@@ -1,16 +1,40 @@
 var db = require('../modules/db.js');
 var user = {};
 
-// TODO: Create User Profile
-user.createUser = function(id, displayName) {
+user.createUser = function(id, displayName, accessToken) {
   var database = db.getDatabase();
-  database.collection('inserts').insertOne({fb_id: id, name: displayName});
+  database.collection('users').updateOne({
+    _id: id
+  }, {
+    _id: id,
+    name: displayName,
+    token: accessToken
+  }, {
+    upsert: true
+  }, function(err, result) {
+    // TODO: catch error?
+  });
 };
 
-// TODO: Delete User
-user.deleteUser = function() {
-
+user.updateToken = function(id, accessToken) {
+  var database = db.getDatabase();
+  database.collection('users').updateOne({
+    _id: id
+  }, {
+    token: accessToken
+  }, function(err, result) {
+    // TODO: catch error?
+  });
 };
-// END
+
+user.findUser = function(id) {
+  var database = db.getDatabase();
+  database.collection('users').findOne({
+    _id: id
+  }, function(err, result) {
+    // TODO: catch error?
+    return result;
+  });
+};
 
 module.exports = user;

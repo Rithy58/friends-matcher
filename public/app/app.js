@@ -6,8 +6,9 @@ app.config(function($routeProvider) {
     templateUrl: 'app/views/homeView.html',
     controller: 'homeController'
   })
-  .when('/login', {
-    templateUrl: 'app/views/login.html'
+  .when('/dashboard', {
+    templateUrl: 'app/views/dashboardView.html',
+    controller: 'dashboardController'
   })
   .otherwise({
     redirectTo: '/'

@@ -2,15 +2,18 @@ var auth = require('passport');
 var Strategy = require('passport-facebook').Strategy;
 
 auth.use(new Strategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: process.env.CALLBACK_URL
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    return cb(null, profile);
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: process.env.CALLBACK_URL
+  }, function(_accessToken, refreshToken, profile, cb) {
+    return cb(null, {
+      id: profile.id,
+      displayName: profile.displayName,
+      accessToken: _accessToken
+    });
 }));
 
-// TODO: reduce the size stored in sessions
+// REVIEW
 auth.serializeUser(function(user, cb) {
   cb(null, user);
 });

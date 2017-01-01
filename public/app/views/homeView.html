@@ -10,17 +10,11 @@
         </h3>
       </div>
     </md-toolbar>
-    <section ng-hide="loggedin">
+    <section>
       <p>
         Login to see who matches you!
       </p>
-      <md-button aria-label="login" href="/auth/login"><img src="img/fb_login.png"></img></md-button>
-    </section>
-    <section ng-show="loggedin">
-      <p>
-        Welcome back, {{ name }}!
-      </p>
-      <md-button class="md-raised md-primary" href="/auth/profile">Dashboard</md-button>
+      <md-button aria-label="login" href="/auth/web/login"><img src="img/fb_login.png"></img></md-button>
     </section>
   </md-content>
 
