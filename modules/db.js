@@ -8,7 +8,6 @@ db.init = function() {
       console.log(err);
       throw Error('Cannot connect to database');
     }
-    console.log('Database connected')
     _database = database;
   });
 };
