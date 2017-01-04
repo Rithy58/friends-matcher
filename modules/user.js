@@ -12,7 +12,9 @@ user.createUser = function(id, displayName, accessToken) {
   }, {
     upsert: true
   }, function(err, result) {
-    // TODO: catch error?
+    if(err) {
+      console.log(err);
+    }
   });
 };
 
@@ -23,7 +25,9 @@ user.updateToken = function(id, accessToken) {
   }, {
     token: accessToken
   }, function(err, result) {
-    // TODO: catch error?
+    if(err) {
+      console.log(err);
+    }
   });
 };
 
@@ -32,7 +36,9 @@ user.findUser = function(id) {
   database.collection('users').findOne({
     _id: id
   }, function(err, result) {
-    // TODO: catch error?
+    if(err) {
+      console.log(err);
+    }
     return result;
   });
 };

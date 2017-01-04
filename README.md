@@ -39,6 +39,7 @@ Currently, user can login via the web app front-end and the back-end will authen
 ##### TODO List
 + Redo Tests
 + Come up with better tasks list
++ Proper Error Handling
 
 ### Credits:
 + Heroku - https://heroku.com
